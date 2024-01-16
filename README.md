@@ -1,4 +1,4 @@
-# Zeitenspeichern in Atmel
+# Save-time-in-C
 
 ## Including the time.h libary
 
