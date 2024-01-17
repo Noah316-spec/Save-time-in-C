@@ -1,4 +1,4 @@
-# Save-time-in-C
+# Save-time-in-C | Check Vibration
 
 ## Including the time.h libary
 
@@ -65,3 +65,18 @@ one character at a time.
 {
 	lcd_printChar(timeString1[j]);
 }`
+
+
+## Check Vibration 
+
+This function, `checkVibration()`, continuously checks for vibrations detected by a sensor connected to pin PD7. If a vibration is detected, it changes the LED status to red, initializes the LCD, and displays the warning message "Achtung" and "Erschuetterung !" on the LCD. This warning message is displayed for 200 milliseconds. To declare PD7 use this `PORTD |= PIND7; DDRD |= PD7;`
+
+`while (!(PIND & (1 << PD7)))
+	{
+		ledstatus = ledrot;
+		lcd_init();
+		lcd_print("Achtung");
+		lcd_setCursor(1, 0);
+		lcd_print("Erschuetterung !");
+		_delay_ms(200);
+	}`
